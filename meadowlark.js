@@ -17,6 +17,15 @@ app.set('view engine', 'handlebars');
 // set the port
 app.set('port', process.env.PORT || 3000);
 
+
+// testing middlewear
+app.use(function(req, res, next){
+    res.locals.showTests = app.get('env') !== 'production' && 
+        req.query.test === '1';
+    next();
+});
+
+// routes:
 //index page
 app.get('/', function(req, res){
     res.render('home');
