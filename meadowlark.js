@@ -52,6 +52,7 @@ app.get('/', function (req, res){
 app.get('/about', function (req, res){
     res.render('about', {
         fortune: fortune.getFortune(),
+        // tells which tests.js should be ran on this route
         pageTestScript: "/qa/tests-about.js"
     } );
 });
@@ -60,6 +61,7 @@ app.get('/headers', function(req, res){
     res.set('Content-Type', 'text/plain');
     var s = '';
     for(var name in req.headers) s += name + ': ' + req.headers[name] + '\n';
+    s += req.ip;
     res.send(s);
 });
 

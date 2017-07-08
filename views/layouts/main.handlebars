@@ -1,18 +1,19 @@
 <!doctype html>
 <html>
   <head>
+    <meta content="text/html" charset="utf-8">
     <title>Meadowlark Travel</title>
     {{#if showTests}}
         <link rel="stylesheet" href="/vendor/mocha.css">
     {{/if}}
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-
   </head>
 
   <body>
     <!-- <header><img src="/img/logo.jpg" alt="Meadowlard Travel Logo"></header> !-->
     {{{body}}}
 
+    <!-- Mocha test HTML !-->
     {{#if showTests}}
       <div id="mocha"></div>
       <script src="vendor/mocha.js"></script>
